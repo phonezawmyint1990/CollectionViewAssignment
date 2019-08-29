@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kTd-uh-1cc">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Book Store View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BookStoreViewController" customModule="CollectionViewAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ACu-P1-ytM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GGk-U7-yxQ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ACu-P1-ytM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="26c-zl-8CP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ACu-P1-ytM" secondAttribute="trailing" id="6p9-QG-BTr"/>
+                            <constraint firstItem="ACu-P1-ytM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lic-JO-OLt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ACu-P1-ytM" secondAttribute="bottom" id="Wfq-EX-gyl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GKL-Ts-ojq">
+                        <barButtonItem key="leftBarButtonItem" image="icon_menu" id="UtS-cc-tt1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_bell" id="FUp-uV-xrB">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem image="icon_scanner" id="wzf-D7-rD4">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bookStoreCollectionView" destination="ACu-P1-ytM" id="0Af-xA-Kf8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PAQ-9D-DIN">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kTd-uh-1cc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="K2s-bP-Hdl">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.77389569680000003" blue="0.56252246319999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <connections>
+                        <segue destination="g6H-QU-0ya" kind="relationship" relationship="viewControllers" id="h24-jW-X6d"/>
+                        <segue destination="R81-gl-S7Z" kind="relationship" relationship="viewControllers" id="ikM-3Z-RRc"/>
+                        <segue destination="NcG-3S-7ik" kind="relationship" relationship="viewControllers" id="J05-UE-k25"/>
+                        <segue destination="V4A-py-Gxu" kind="relationship" relationship="viewControllers" id="zt9-NO-KXw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyc-fI-CLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2033" y="1211"/>
+        </scene>
+        <!--Bookstore-->
+        <scene sceneID="e5R-E7-2SX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R81-gl-S7Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookstore" image="icon_bookstore" id="Yyw-b6-I4W"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="0RT-6q-rQ0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qCg-Ny-xIi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smd-4w-NEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hLu-Jp-VNz">
+            <objects>
+                <viewController id="UxQ-Wy-zAL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Jx-Ei-bgq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uoi-0u-yhB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yao-8C-gIt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZmO-gM-xXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956.521739130435" y="832.36607142857144"/>
+        </scene>
+        <!--Bookshelf-->
+        <scene sceneID="BRm-NI-cAm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g6H-QU-0ya" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookshelf" image="icon_bookshelf" id="NMR-Tx-1P5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kwi-20-60C">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UxQ-Wy-zAL" kind="relationship" relationship="rootViewController" id="Rio-Q7-zCP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWD-oD-BJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046.376811594203" y="832.36607142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hU4-JJ-KqJ">
+            <objects>
+                <viewController id="fFZ-EU-YMI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="klz-T3-aPo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="abi-lD-osn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RfR-Ik-W4D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z97-52-zvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946.376811594203" y="1553.5714285714284"/>
+        </scene>
+        <!--Bag-->
+        <scene sceneID="SYs-n6-0fg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NcG-3S-7ik" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bag" image="icon_bag" id="viY-At-Cuh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="E64-34-5pm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fFZ-EU-YMI" kind="relationship" relationship="rootViewController" id="4hM-jO-YH6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UxL-K5-5Kb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036.231884057971" y="1553.5714285714284"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ahi-fr-Yhr">
+            <objects>
+                <viewController id="nfD-6H-y9m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="REK-UZ-ucb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vs7-za-IKf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fqk-A4-ZkH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8QV-nl-M6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942.0289855072465" y="2290.8482142857142"/>
+        </scene>
+        <!--Community-->
+        <scene sceneID="77L-RA-Jxc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V4A-py-Gxu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Community" image="icon_community" id="1Rq-hi-Gsq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="M8h-Bj-KVd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nfD-6H-y9m" kind="relationship" relationship="rootViewController" id="6PZ-4e-27R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3WC-Mr-htE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.8840579710145" y="2290.8482142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_bag" width="25" height="25"/>
+        <image name="icon_bell" width="25" height="25"/>
+        <image name="icon_bookshelf" width="25" height="25"/>
+        <image name="icon_bookstore" width="25" height="25"/>
+        <image name="icon_community" width="25" height="25"/>
+        <image name="icon_menu" width="25" height="25"/>
+        <image name="icon_scanner" width="25" height="25"/>
+    </resources>
+</document>
