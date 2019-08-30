@@ -13,6 +13,13 @@ class BookStoreCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblBookName: UILabel!
     @IBOutlet weak var lblAuthorName: UILabel!
     
+    var data: CustomData? {
+        didSet{
+           lblAuthorName.text = data?.authorName
+           lblBookName.text = data?.bookName
+           authorImg.image = data?.authorImg
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

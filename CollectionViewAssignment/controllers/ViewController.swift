@@ -14,12 +14,24 @@ class BookStoreViewController: UIViewController {
     
     let numberOfItemPerRow:CGFloat = 3.0
     let spacing:CGFloat = 5
-    var bookName:[String] = ["Rich Dad Poor Dad","The Learn Startup",
-                             "The 4-Hour Work Week","The subtle art of not giving a F*ck","The Modern Alphabet","Think and Grow Rich","Rich Dad Poor Dad","The Learn Startup",
-                             "The 4-Hour Work Week","The subtle art of not giving a F*ck","The Modern Alphabet","Think and Grow Rich","Rich Dad Poor Dad","The Learn Startup",
-                             "The 4-Hour Work Week","The subtle art of not giving a F*ck","The Modern Alphabet","Think and Grow Rich"]
-    var authorName:[String] = ["Robert T.Kiyosaki","Eric Ries","Timothy Ferriss","Mark Manson","Charles Duhigg","Napoleaon Hill","Robert T.Kiyosaki","Eric Ries","Timothy Ferriss","Mark Manson","Charles Duhigg","Napoleaon Hill","Robert T.Kiyosaki","Eric Ries","Timothy Ferriss","Mark Manson","Charles Duhigg","Napoleaon Hill"]
-    var authorImg:[UIImage] = [#imageLiteral(resourceName: "RichDadPoorDad"),#imageLiteral(resourceName: "TheLearnStartup"),#imageLiteral(resourceName: "The4HourWorkWeek"),#imageLiteral(resourceName: "TheSubtleArtOfNot"),#imageLiteral(resourceName: "TheModernAlphabet"),#imageLiteral(resourceName: "ThinkAndGrowRich"),#imageLiteral(resourceName: "RichDadPoorDad"),#imageLiteral(resourceName: "TheLearnStartup"),#imageLiteral(resourceName: "The4HourWorkWeek"),#imageLiteral(resourceName: "TheSubtleArtOfNot"),#imageLiteral(resourceName: "TheModernAlphabet"),#imageLiteral(resourceName: "ThinkAndGrowRich"),#imageLiteral(resourceName: "RichDadPoorDad"),#imageLiteral(resourceName: "TheLearnStartup"),#imageLiteral(resourceName: "The4HourWorkWeek"),#imageLiteral(resourceName: "TheSubtleArtOfNot"),#imageLiteral(resourceName: "TheModernAlphabet"),#imageLiteral(resourceName: "ThinkAndGrowRich")]
+    var data = [CustomData(authorName: "Robert T.Kiyosaki", bookName: "Rich Dad Poor Dad", authorImg: #imageLiteral(resourceName: "RichDadPoorDad")),
+                CustomData(authorName: "Eric Ries", bookName: "The Learn Startup", authorImg: #imageLiteral(resourceName: "TheLearnStartup")),
+                CustomData(authorName: "Timothy Ferriss", bookName: "The 4-Hour Work Week", authorImg: #imageLiteral(resourceName: "The4HourWorkWeek")),
+                CustomData(authorName: "Mark Manson", bookName: "The subtle art of not giving a F*ck", authorImg: #imageLiteral(resourceName: "TheSubtleArtOfNot")),
+                CustomData(authorName: "Charles Duhigg", bookName: "The Modern Alphabet", authorImg: #imageLiteral(resourceName: "TheModernAlphabet")),
+                CustomData(authorName: "Napoleaon Hill", bookName: "Think and Grow Rich", authorImg: #imageLiteral(resourceName: "ThinkAndGrowRich")),
+                CustomData(authorName: "Robert T.Kiyosaki", bookName: "Rich Dad Poor Dad", authorImg: #imageLiteral(resourceName: "RichDadPoorDad")),
+                CustomData(authorName: "Eric Ries", bookName: "The Learn Startup", authorImg: #imageLiteral(resourceName: "TheLearnStartup")),
+                CustomData(authorName: "Timothy Ferriss", bookName: "The 4-Hour Work Week", authorImg: #imageLiteral(resourceName: "The4HourWorkWeek")),
+                CustomData(authorName: "Mark Manson", bookName: "The subtle art of not giving a F*ck", authorImg: #imageLiteral(resourceName: "TheSubtleArtOfNot")),
+                CustomData(authorName: "Charles Duhigg", bookName: "The Modern Alphabet", authorImg: #imageLiteral(resourceName: "TheModernAlphabet")),
+                CustomData(authorName: "Napoleaon Hill", bookName: "Think and Grow Rich", authorImg: #imageLiteral(resourceName: "ThinkAndGrowRich")),
+                CustomData(authorName: "Robert T.Kiyosaki", bookName: "Rich Dad Poor Dad", authorImg: #imageLiteral(resourceName: "RichDadPoorDad")),
+                CustomData(authorName: "Eric Ries", bookName: "The Learn Startup", authorImg: #imageLiteral(resourceName: "TheLearnStartup")),
+                CustomData(authorName: "Timothy Ferriss", bookName: "The 4-Hour Work Week", authorImg: #imageLiteral(resourceName: "The4HourWorkWeek")),
+                CustomData(authorName: "Mark Manson", bookName: "The subtle art of not giving a F*ck", authorImg: #imageLiteral(resourceName: "TheSubtleArtOfNot")),
+                CustomData(authorName: "Charles Duhigg", bookName: "The Modern Alphabet", authorImg: #imageLiteral(resourceName: "TheModernAlphabet")),
+                CustomData(authorName: "Napoleaon Hill", bookName: "Think and Grow Rich", authorImg: #imageLiteral(resourceName: "ThinkAndGrowRich"))]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +52,12 @@ class BookStoreViewController: UIViewController {
 
 extension BookStoreViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookName.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: BookStoreCollectionViewCell.self), for: indexPath) as! BookStoreCollectionViewCell
-        item.lblAuthorName.text = authorName[indexPath.row]
-        item.lblBookName.text = bookName[indexPath.row]
-        item.authorImg.image = authorImg[indexPath.row]
+        item.data = data[indexPath.row]
         return item
     }
     
@@ -56,4 +66,11 @@ extension BookStoreViewController: UICollectionViewDataSource {
 
 extension BookStoreViewController: UICollectionViewDelegate{
     
+}
+
+
+struct CustomData {
+    var authorName: String
+    var bookName: String
+    var authorImg: UIImage
 }
